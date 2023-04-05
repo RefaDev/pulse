@@ -1,0 +1,66 @@
+.promo {
+  background: url('../../images/bg.jpg') center (center/cover) no-repeat;
+  min-height: 650px;
+  color: $whiteColor;
+  padding: 21px 0px 93px 0px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 91px 0px 0px 0px;
+		@include tablet(750)
+  }
+  &__header {
+    color: $whiteColor;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 42px;
+    text-transform: uppercase;
+    margin: 0px 0px 17px 0px;
+  }
+  &__subheader {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: $whiteColor;
+    margin: 0px 0px 60px 0px;
+  }
+  &__icons {
+    display: flex;
+    margin: 0px 0px 65px 0px;
+  }
+  &__icon {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 40px 0px 0px;
+    color: $whiteColor;
+    &:last-child {
+      margin: 0px 0px 0px 0px;
+    }
+    img {
+      width: 45px;
+      margin: 0px 0px 20px 0px;
+    }
+  }
+  &__link {
+    margin: 8px 0px 0px 0px;
+    font-weight: 500;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 25px;
+    text-align: right;
+
+    p {
+      color: $whiteColor;
+    }
+    a {
+      text-decoration-line: underline;
+      color: $whiteColor;
+    }
+  }
+}

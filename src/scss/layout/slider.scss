@@ -1,0 +1,35 @@
+.slider {
+  padding: 81px 0;
+  &__container {
+  }
+}
+.swiper-slide{
+	position: relative;
+
+	img{
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+}
+.swiper-button-next{
+	position: absolute;
+	background: transparent;
+	z-index: 1111;
+	top: 50%;
+	right: 0;
+
+	transform: translateY(-50%);
+	img{
+		height: 51px;
+		width: 31px;
+	}
+}
+.swiper-button-prev{
+	position: absolute;
+	background: transparent;
+	z-index: 1111;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}

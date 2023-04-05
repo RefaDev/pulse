@@ -1,0 +1,48 @@
+.advantages {
+  background: #f6f6f6;
+  &__container {
+    padding: 70px 0px 85px 0px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: $blackColor;
+    margin: 0px 0px 60px 0px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    @include tablet(855);
+  }
+
+  &__item {
+    max-width: 269px;
+    text-align: center;
+    img {
+      margin: 0px 0px 35px 0px;
+			height: 70px;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 29px;
+      color: $blackColor;
+      margin: 0px 0px 20px 0px;
+    }
+    p {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+      color: $blackColor;
+      a {
+        color: $redColor;
+      }
+    }
+  }
+}
