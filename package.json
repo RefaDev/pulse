@@ -14,10 +14,6 @@
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/StarkElessar/gulp-2022.git"
-  },
   "keywords": [
     "gulp",
     "webpack",
@@ -26,11 +22,8 @@
     "scss",
     "html"
   ],
-  "author": "Sergei Chevdar <serj.elessar@gmail.com>",
+  "author": "Refat Abdukarimov <qwebecooll@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/StarkElessar/gulp-2022/issues"
-  },
   "homepage": "https://refadev.github.io/pulse",
   "devDependencies": {
     "@babel/core": "^7.19.1",

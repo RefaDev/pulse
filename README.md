@@ -61,7 +61,7 @@ import * as flsFunctions from './modules' // './modules/index.js'
 Отдельной вишенкой является плагин `gh-pages` для деплоя папки `/dist` на отдельную ветку GitHub, чтобы красиво развернуть свой проект на GitHub Pages. Для этого в `package.json` укажи в поле **homepage** ссылку на свою страницу gh-pages:
 
 ```json
-"homepage": "https://{UserName}.github.io/{NameRepo}",
+// "homepage": "https://{UserName}.github.io/{NameRepo}",
 ```
 
-По любым вопросам касающихся сборки пишите мне в [Telegram](https://t.me/StarkElessar).
+<!-- По любым вопросам касающихся сборки пишите мне в [Telegram](https://t.me/StarkElessar). -->
