@@ -1,5 +1,5 @@
 .consult {
-  background: url('../../images/bg2.jpg') center (center/cover) no-repeat;
+  background: url('./../images/bg2.jpg') center (center/cover) no-repeat;
   min-height: 680px;
   &__container {
     padding: 100px 0px 108px 0px;
@@ -8,7 +8,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-		align-items: flex-start;
+    align-items: flex-start;
     @include tablet(750);
     h2 {
       font-weight: 700;

@@ -1,5 +1,5 @@
 .promo {
-  background: url('../../images/bg.jpg') center (center/cover) no-repeat;
+  background: url('./../images/bg.jpg') center (center/cover) no-repeat;
   min-height: 650px;
   color: $whiteColor;
   padding: 21px 0px 93px 0px;
@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: flex-end;
     margin: 91px 0px 0px 0px;
-		@include tablet(750)
+    @include tablet(750);
   }
   &__header {
     color: $whiteColor;

@@ -1,10 +1,10 @@
-import toggleBodyLock from './../helpers/toggleBodyLock'
+import toggleBodyLock from '../helpers/toggleBodyLock'
 import {
   html,
   firstScreen,
   header,
   burgerButton,
-} from './../helpers/elementsNodeList'
+} from '../helpers/elementsNodeList'
 
 // logger (Full Logging System) ==========================================================================
 function FLS(message) {
@@ -187,15 +187,11 @@ const catalogItemHandler = () => {
 
 const buyItemsHandler = () => {
   const buttons = document.querySelectorAll('.button_mini')
-	const descr  = document.querySelector(
-		`[data-name="name"]`
-	)
-	const catalogItem = document.querySelectorAll('.catalog-item__subtitle')
-  buttons.forEach((button,i) => {
+  const descr = document.querySelector(`[data-name="name"]`)
+  const catalogItem = document.querySelectorAll('.catalog-item__subtitle')
+  buttons.forEach((button, i) => {
     button.addEventListener('click', () => {
-			descr.textContent = catalogItem[i].textContent
-			
-			
+      descr.textContent = catalogItem[i].textContent
     })
   })
 }
