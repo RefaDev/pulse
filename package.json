@@ -3,7 +3,6 @@
   "version": "1.3.3",
   "description": "Pulsometre shop",
   "main": "gulpfile.js",
-	
   "type": "module",
   "scripts": {
     "dev": "gulp",
@@ -68,6 +67,8 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "inputmask": "^5.0.8",
+    "just-validate": "^4.2.0",
     "swiper": "^8.4.7"
   }
 }

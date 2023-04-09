@@ -15,7 +15,7 @@ import {
   menuInit,
   tabsHandler,
   catalogItemHandler,
-	buyItemsHandler
+  buyItemsHandler,
 } from './modules'
 
 /* Раскомментировать для использования */
@@ -40,6 +40,192 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
 })
+
+//Validation
+import JustValidate from 'just-validate'
+import Inputmask from '../../node_modules/inputmask/lib/inputmask'
+
+const selector = document.querySelectorAll('#phone')
+const im = new Inputmask('+7(999)999-99-99')
+im.mask(selector)
+
+const validator = new JustValidate('#form')
+const validator2 = new JustValidate('#form2')
+const validator3 = new JustValidate('#form3')
+
+validator
+  .addField('#name', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите имя',
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Минимум 2 буквы',
+    },
+    {
+      rule: 'maxLength',
+      value: 15,
+      errorMessage: 'Максимум 15 букв',
+    },
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите почту',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Неверный формат почты',
+    },
+  ])
+  .addField('#phone', [
+    {
+      validator: (value) => {
+        const phone = selector[0].value.replace(/[+()_-]/g, '')
+
+        return Boolean(phone && phone.length > 0)
+      },
+      errorMessage: 'Введите телефон',
+    },
+    {
+      validator: (value) => {
+        const phone = selector[0].value.replace(/[+()_-]/g, '')
+
+        return Boolean(phone && phone.length === 11)
+      },
+      errorMessage: 'Введите телефон полностью',
+    },
+  ])
+validator2
+  .addField('#name', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите имя',
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Минимум 2 буквы',
+    },
+    {
+      rule: 'maxLength',
+      value: 15,
+      errorMessage: 'Максимум 15 букв',
+    },
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите почту',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Неверный формат почты',
+    },
+  ])
+  .addField('#phone', [
+    {
+      validator: (value) => {
+        const phone = selector[1].value.replace(/[+()_-]/g, '')
+
+        return Boolean(phone && phone.length > 0)
+      },
+      errorMessage: 'Введите телефон',
+    },
+    {
+      validator: (value) => {
+        const phone = selector[1].value.replace(/[+()_-]/g, '')
+
+        return Boolean(phone && phone.length === 11)
+      },
+      errorMessage: 'Введите телефон полностью',
+    },
+  ])
+validator3
+  .addField('#name', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите имя',
+    },
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Минимум 2 буквы',
+    },
+    {
+      rule: 'maxLength',
+      value: 15,
+      errorMessage: 'Максимум 15 букв',
+    },
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите почту',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Неверный формат почты',
+    },
+  ])
+  .addField('#phone', [
+    {
+      validator: (value) => {
+        const phone = selector[2].value.replace(/[+()_-]/g, '')
+
+        return Boolean(phone && phone.length > 0)
+      },
+      errorMessage: 'Введите телефон',
+    },
+    {
+      validator: (value) => {
+        const phone = selector[2].value.replace(/[+()_-]/g, '')
+
+        return Boolean(phone && phone.length === 11)
+      },
+      errorMessage: 'Введите телефон полностью',
+    },
+  ])
+//Validation
+
+//отправка формы
+const sendForm = document.querySelector('#form')
+sendForm.addEventListener('submit', submitForm)
+async function submitForm(event) {
+  event.preventDefault() // отключаем перезагрузку/перенаправление страницы
+  try {
+    // Формируем запрос
+    const response = await fetch(event.target.action, {
+      method: 'POST',
+      body: new FormData(event.target),
+    })
+		console.log(response);
+    // проверяем, что ответ есть
+    if (!response.ok) throw `Ошибка при обращении к серверу: ${response.status}`
+    // проверяем, что ответ действительно JSON
+    const contentType = response.headers.get('content-type')
+    if (!contentType || !contentType.includes('application/json')) {
+      throw 'Ошибка обработки. Ответ не JSON'
+    }
+    // обрабатываем запрос
+    const json = await response.json()
+    if (json.result === 'success') {
+      // в случае успеха
+      alert(json.info)
+    } else {
+      // в случае ошибки
+      console.log(json)
+      throw json.info
+    }
+  } catch (error) {
+    // обработка ошибки
+    alert(error)
+  }
+}
+//отправка формы
+
 // Включить/выключить FLS (Full Logging System) (в работе)
 window['FLS'] = location.hostname === 'localhost'
 
@@ -49,7 +235,7 @@ window['FLS'] = location.hostname === 'localhost'
 isWebp()
 /* Добавление класса touch для HTML если браузер мобильный */
 /* Раскомментировать для использования */
-// addTouchClass();
+addTouchClass()
 /* Добавление loaded для HTML после полной загрузки страницы */
 /* Раскомментировать для использования */
 // addLoadedClass();

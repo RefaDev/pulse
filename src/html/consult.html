@@ -5,11 +5,17 @@
       <p>
         Просто заполните форму заявки и мы перезвоним вам в течении 10 минут
       </p>
-      <form class="form">
-        <input type="text" placeholder="Ваше имя" />
-        <input type="tel" placeholder="Ваш телефон" />
-        <input type="email" placeholder="Ваш E-mail" />
-        <button class="button button_main" >заказать кОНСУЛЬТАЦИЮ</button>
+      <form class="form" id="form" enctype="multipart/form-data" method="post"  action="send.php">
+        <div class="input__box">
+          <input id="name" type="text" name="name" placeholder="Ваше имя" autocomplete="off"/>
+        </div>
+        <div class="input__box">
+          <input id="phone" type="tel" name="phone" placeholder="+7(___)___-__-__" autocomplete="off"/>
+        </div>
+        <div class="input__box">
+          <input id="email" type="email" name="email" placeholder="Ваш E-mail" autocomplete="off"/>
+        </div>
+        <button type="submit" class="button button_main">заказать кОНСУЛЬТАЦИЮ</button>
       </form>
     </div>
   </div>

@@ -28,12 +28,12 @@
     .form {
       display: flex;
       flex-direction: column;
-
+      
       input {
-        margin: 0px 0px 11px 0px;
         width: 303px;
         padding: 20px;
         border-radius: 5px;
+
         &:last-of-type {
           margin: 0px 0px 19px 0px;
         }
@@ -47,4 +47,15 @@
       }
     }
   }
+}
+.input__box	{
+	position: relative;
+	margin: 0px 0px 8px 0px;
+}
+.just-validate-error-label {
+  padding: 0px 0px 10px 0px;
+  color: tomato !important;
+  position: absolute;
+	top: 60px;
+
 }
